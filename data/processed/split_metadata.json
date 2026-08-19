@@ -1,0 +1,30 @@
+{
+  "config": {
+    "split": {
+      "train": 0.7,
+      "test": 0.15,
+      "val": 0.15
+    },
+    "group_column": "zipcode",
+    "random_state": 42
+  },
+  "summary": {
+    "train": {
+      "n_rows": 15100,
+      "pct_rows": 0.6987,
+      "n_groups": 49
+    },
+    "test": {
+      "n_rows": 2644,
+      "pct_rows": 0.1223,
+      "n_groups": 10
+    },
+    "val": {
+      "n_rows": 3868,
+      "pct_rows": 0.179,
+      "n_groups": 11
+    },
+    "group_overlap": [],
+    "resales_spanning_splits": 0
+  }
+}

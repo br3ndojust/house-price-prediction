@@ -1,0 +1,30 @@
+{
+  "n_rows": 21612,
+  "n_zipcodes": 70,
+  "correlation_with_price_log": {
+    "grade": 0.7036611425245876,
+    "sqft_living": 0.6953649105858504,
+    "hous_val_amt": 0.6308171723984435,
+    "sqft_living15": 0.6193575641838208,
+    "per_bchlr": 0.6114014328939558,
+    "sqft_above": 0.60184359841982,
+    "bathrooms": 0.5508229404927097,
+    "bedrooms": 0.3510054617311086,
+    "view": 0.34653446845145885,
+    "sqft_basement": 0.3169573451953445,
+    "floors": 0.31059262392097076,
+    "medn_hshld_incm_amt": 0.3061586826665892,
+    "waterfront": 0.1745904003913399,
+    "sqft_lot": 0.09962941408398562,
+    "sqft_lot15": 0.09160122070878239,
+    "condition": 0.03949428132070786
+  },
+  "zip_summary_min_n": 50,
+  "zip_summary_max_n": 601,
+  "n_zipcodes_below_100_properties": 3,
+  "low_volume_zipcodes": [
+    98039,
+    98148,
+    98024
+  ]
+}

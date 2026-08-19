@@ -1,0 +1,39 @@
+{
+  "acceptance_criteria": "criterio de CV: reduz MAE de GroupKFold(3) dentro do train em >=2% sobre baseline sem augmentation",
+  "results": {
+    "baseline_no_augmentation": {
+      "n_train_rows": 15100,
+      "cv_mae_mean": 107734.7216846567,
+      "cv_mae_std": 13899.735937528898,
+      "test_mae_overall": 97987.78168140129,
+      "test_mae_hard_subset": 116982.45410599471
+    },
+    "technique_a_smogn": {
+      "n_train_rows": 18137,
+      "cv_mae_mean": 105369.35073672108,
+      "cv_mae_std": 15277.211713081539,
+      "test_mae_overall": 95875.23381949698,
+      "test_mae_hard_subset": 116264.34070064299
+    },
+    "technique_b_controlled_perturbation": {
+      "n_train_rows": 22650,
+      "cv_mae_mean": 95080.55199341796,
+      "cv_mae_std": 14681.655619765925,
+      "test_mae_overall": 98747.44502588408,
+      "test_mae_hard_subset": 117354.75126465583
+    }
+  },
+  "decision_per_technique": {
+    "technique_a_smogn": {
+      "cv_mae_improvement_pct": 0.021955511750976087,
+      "meets_acceptance_criteria": true
+    },
+    "technique_b_controlled_perturbation": {
+      "cv_mae_improvement_pct": 0.11745674461644723,
+      "meets_acceptance_criteria": true
+    }
+  },
+  "cv_recommended": "technique_b_controlled_perturbation",
+  "adopted": "baseline_no_augmentation",
+  "adopted_source": "configs/augmentation.yaml (decisao humana/versionada, ver fase 12 no AUDIT_LOG.md - pode divergir do cv_recommended de proposito)"
+}

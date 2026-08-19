@@ -1,0 +1,129 @@
+{
+  "leakage_checks": {
+    "spatial_index_fit_size_matches_train": true,
+    "dist_to_seattle_center": {
+      "feature": "dist_to_seattle_center",
+      "r_train": -0.18846201842011062,
+      "r_test": -0.1903469282473367,
+      "gap": -0.0018849098272260834,
+      "suspicious_leakage": false
+    },
+    "comps_knn_price": {
+      "feature": "comps_knn_price",
+      "r_train": 0.8331883433634013,
+      "r_test": 0.6008701726635571,
+      "gap": -0.23231817069984417,
+      "suspicious_leakage": false
+    },
+    "local_grade_percentile": {
+      "feature": "local_grade_percentile",
+      "r_train": 0.4354662594220229,
+      "r_test": 0.5040771859415853,
+      "gap": 0.06861092651956247,
+      "suspicious_leakage": false
+    },
+    "dist_to_nearest_train_zip": {
+      "feature": "dist_to_nearest_train_zip",
+      "r_train": -0.019534239463156862,
+      "r_test": -0.04993539531085935,
+      "gap": -0.03040115584770249,
+      "suspicious_leakage": false
+    },
+    "comps_knn_neighbor_distance": {
+      "feature": "comps_knn_neighbor_distance",
+      "r_train": -0.013866356965789384,
+      "r_test": -0.050885981706043054,
+      "gap": -0.03701962474025367,
+      "suspicious_leakage": false
+    },
+    "local_price_dispersion": {
+      "feature": "local_price_dispersion",
+      "r_train": 0.28825614879615297,
+      "r_test": 0.11509291182005298,
+      "gap": -0.17316323697609998,
+      "suspicious_leakage": false
+    }
+  },
+  "ablation": {
+    "baseline": {
+      "mae_mean": 107734.7216846567,
+      "mae_std": 13899.735937528898,
+      "mae_by_band_mean": {
+        "Premium": 89669.89025363613,
+        "Luxury": 205655.6047080079,
+        "Entry": 52045.42850143058,
+        "Standard": 81510.7870743863
+      }
+    },
+    "baseline+raw_derived": {
+      "mae_mean": 107898.21804169602,
+      "mae_std": 13921.66206817839,
+      "mae_by_band_mean": {
+        "Premium": 89060.7233244704,
+        "Luxury": 204906.05469070197,
+        "Entry": 52781.25537836464,
+        "Standard": 82634.14348348656
+      }
+    },
+    "baseline+contextual": {
+      "mae_mean": 79937.79334877225,
+      "mae_std": 7435.797189661852,
+      "mae_by_band_mean": {
+        "Premium": 66657.12136487615,
+        "Luxury": 164198.2197843363,
+        "Entry": 38263.94456940293,
+        "Standard": 48747.663718607255
+      }
+    },
+    "baseline+raw_derived+contextual": {
+      "mae_mean": 79319.45765443251,
+      "mae_std": 7620.681335124985,
+      "mae_by_band_mean": {
+        "Premium": 65647.45647189903,
+        "Luxury": 163412.3950407196,
+        "Entry": 37979.42998960951,
+        "Standard": 48189.92636142822
+      }
+    },
+    "baseline+contextual+property_age": {
+      "mae_mean": 77732.96653302386,
+      "mae_std": 7108.8826634556535,
+      "mae_by_band_mean": {
+        "Premium": 64449.809501563686,
+        "Luxury": 159596.2178697766,
+        "Entry": 37419.977752227314,
+        "Standard": 47798.09869715292
+      }
+    },
+    "best_known+new_raw_derived": {
+      "mae_mean": 77211.84731722814,
+      "mae_std": 7051.9269761824635,
+      "mae_by_band_mean": {
+        "Premium": 63936.91159312943,
+        "Luxury": 158333.07746626803,
+        "Entry": 37682.6068350867,
+        "Standard": 47159.10407349412
+      }
+    },
+    "best_known+new_contextual": {
+      "mae_mean": 76579.28268757973,
+      "mae_std": 7136.321453655397,
+      "mae_by_band_mean": {
+        "Premium": 62826.61426168858,
+        "Luxury": 158418.3488797349,
+        "Entry": 37394.23352566132,
+        "Standard": 46337.005609077845
+      }
+    },
+    "best_known+all_new_candidates": {
+      "mae_mean": 76487.6733727434,
+      "mae_std": 6876.879119240083,
+      "mae_by_band_mean": {
+        "Premium": 62916.900677590165,
+        "Luxury": 157846.96503017624,
+        "Entry": 37430.39405473447,
+        "Standard": 46383.036143962156
+      }
+    }
+  }
+}

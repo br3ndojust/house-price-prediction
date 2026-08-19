@@ -1,0 +1,43 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: app/Dockerfile
+    image: house-pricing-api:local
+    ports:
+      - "8000:8000"
+    environment:
+      APP_API_KEY: ${APP_API_KEY:-change-me-dev-key}
+      APP_LOG_LEVEL: ${APP_LOG_LEVEL:-INFO}
+    volumes:
+      # artifacts/ e data/ não são versionados em git (README raiz) — rode o pipeline de ML local
+      # (make setup/validate-data/build/train/evaluate/finalize/promote) antes de subir a API, ou
+      # aponte estes binds para artefatos já gerados. Retraining (POST /training/jobs) escreve novos
+      # candidatos aqui; a API relê via reload() sem rebuild de imagem (P6).
+      - ./artifacts:/app/artifacts
+      - ./data:/app/data
+      # SQLite persiste entre restarts do container (predictions, feedback, training_jobs, ...).
+      - app_db:/app/app_data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health/ready', timeout=3)"]
+      interval: 30s
+      timeout: 5s
+      start_period: 15s
+      retries: 3
+
+  portal:
+    build:
+      context: .
+      dockerfile: portal/Dockerfile
+    image: house-pricing-portal:local
+    ports:
+      - "8501:8501"
+    environment:
+      PORTAL_API_BASE_URL: http://api:8000
+      PORTAL_API_KEY: ${APP_API_KEY:-change-me-dev-key}
+    depends_on:
+      api:
+        condition: service_healthy
+
+volumes:
+  app_db:

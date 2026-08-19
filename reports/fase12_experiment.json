@@ -1,0 +1,136 @@
+{
+  "hypothesis": "reverter para train sem augmentation reduz MAE em test (pipeline completo)",
+  "acceptance_criteria": "test e deliberadamente decisivo aqui (ver docstring) - reverte se MAE sem augmentation < MAE com Tecnica B",
+  "results": {
+    "no_augmentation": {
+      "global": {
+        "n": 2644,
+        "mae": 102875.7539003404,
+        "rmse": 166777.3473542429,
+        "median_ae": 62605.37499999962,
+        "mape": 0.2107099401592192,
+        "median_ape": 0.155202774300442,
+        "p90_ae": 233451.51875000034,
+        "bias": -25905.596651616863,
+        "low_sample": false
+      },
+      "by_band": [
+        {
+          "price_band": "Luxury",
+          "n": 482,
+          "mae": 208942.32157676356,
+          "rmse": 312969.75424932496,
+          "median_ae": 141280.12499999965,
+          "mape": 0.1923728493530082,
+          "median_ape": 0.1564724631726575,
+          "p90_ae": 454153.36874999956,
+          "bias": 47080.6698651453,
+          "low_sample": false
+        },
+        {
+          "price_band": "Premium",
+          "n": 570,
+          "mae": 117895.89320175438,
+          "rmse": 154500.81049146008,
+          "median_ae": 92788.40625000017,
+          "mape": 0.21520623207888673,
+          "median_ape": 0.1633036565805817,
+          "p90_ae": 256188.4687500002,
+          "bias": -68991.31864035087,
+          "low_sample": false
+        },
+        {
+          "price_band": "Standard",
+          "n": 821,
+          "mae": 74146.65461327648,
+          "rmse": 96952.25777738949,
+          "median_ae": 58030.15624999994,
+          "mape": 0.19258844832581015,
+          "median_ape": 0.15366340579710072,
+          "p90_ae": 160039.31249999965,
+          "bias": -29424.97396467724,
+          "low_sample": false
+        },
+        {
+          "price_band": "Entry",
+          "n": 771,
+          "mae": 56054.775291828795,
+          "rmse": 80584.11154191362,
+          "median_ae": 38781.421874999796,
+          "mape": 0.23814617384224393,
+          "median_ape": 0.14944656249999935,
+          "p90_ae": 127163.32031250006,
+          "bias": -35932.97687662127,
+          "low_sample": false
+        }
+      ]
+    },
+    "adopted_technique_b": {
+      "global": {
+        "n": 2644,
+        "mae": 110091.72323243665,
+        "rmse": 176837.94798245543,
+        "median_ae": 71743.32812500003,
+        "mape": 0.23101176760326747,
+        "median_ape": 0.16790980716878345,
+        "p90_ae": 242260.63125000003,
+        "bias": -36192.300335074695,
+        "low_sample": false
+      },
+      "by_band": [
+        {
+          "price_band": "Luxury",
+          "n": 483,
+          "mae": 207276.26009316774,
+          "rmse": 322855.00456093537,
+          "median_ae": 139557.31250000058,
+          "mape": 0.19016519177835098,
+          "median_ape": 0.151078418230563,
+          "p90_ae": 443744.0750000006,
+          "bias": 51944.559782608754,
+          "low_sample": false
+        },
+        {
+          "price_band": "Premium",
+          "n": 569,
+          "mae": 127684.55585456942,
+          "rmse": 165812.19821303771,
+          "median_ae": 99422.62500000012,
+          "mape": 0.23351670829701235,
+          "median_ape": 0.18654828244274893,
+          "p90_ae": 268424.4625000001,
+          "bias": -84854.52619727592,
+          "low_sample": false
+        },
+        {
+          "price_band": "Standard",
+          "n": 821,
+          "mae": 84776.35157201583,
+          "rmse": 112012.53734594646,
+          "median_ae": 66300.49999999977,
+          "mape": 0.21990541793836704,
+          "median_ape": 0.17136213743093923,
+          "p90_ae": 195921.00000000023,
+          "bias": -45910.38883602316,
+          "low_sample": false
+        },
+        {
+          "price_band": "Entry",
+          "n": 771,
+          "mae": 63183.12020711738,
+          "rmse": 91050.61990216735,
+          "median_ae": 42622.34375000023,
+          "mape": 0.2665784316027189,
+          "median_ape": 0.16101458333333307,
+          "p90_ae": 146656.81249999997,
+          "bias": -45145.278625567444,
+          "low_sample": false
+        }
+      ]
+    }
+  },
+  "mae_no_augmentation": 102875.7539003404,
+  "mae_adopted_technique_b": 110091.72323243665,
+  "decision": "REVERT_TO_NO_AUGMENTATION",
+  "stopping_rule_applied": "fase12 encerrada apos 1 iteracao (roadmap secao 10)"
+}

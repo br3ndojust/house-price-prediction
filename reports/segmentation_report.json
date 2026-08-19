@@ -1,0 +1,100 @@
+{
+  "price_band_separation": {
+    "grade": {
+      "Q1": 7.0,
+      "Q2": 7.0,
+      "Q3": 8.0,
+      "Q4": 9.0
+    },
+    "sqft_living": {
+      "Q1": 1430.0,
+      "Q2": 1760.0,
+      "Q3": 2030.0,
+      "Q4": 2980.0
+    },
+    "waterfront_rate": {
+      "Q1": 0.0,
+      "Q2": 0.0007878151260504202,
+      "Q3": 0.002939604489577766,
+      "Q4": 0.026225165562913908
+    },
+    "view_rate": {
+      "Q1": 0.02490066225165563,
+      "Q2": 0.10320378151260504,
+      "Q3": 0.189470871191876,
+      "Q4": 0.6225165562913907
+    }
+  },
+  "k_scan": [
+    {
+      "k": 2,
+      "silhouette": 0.2722326699316407
+    },
+    {
+      "k": 3,
+      "silhouette": 0.2825857284138777
+    },
+    {
+      "k": 4,
+      "silhouette": 0.23388853621213174
+    },
+    {
+      "k": 5,
+      "silhouette": 0.22501218766771366
+    },
+    {
+      "k": 6,
+      "silhouette": 0.229557766560795
+    }
+  ],
+  "best_k": 3,
+  "price_band_counts": {
+    "Standard": 5940,
+    "Premium": 5496,
+    "Entry": 5259,
+    "Luxury": 4917
+  },
+  "property_cluster_counts": {
+    "0": 11651,
+    "1": 9798,
+    "2": 163
+  },
+  "property_cluster_profile_median": {
+    "0": {
+      "sqft_living": 1540.0,
+      "sqft_lot": 7650.0,
+      "bedrooms": 3.0,
+      "bathrooms": 1.75,
+      "floors": 1.0,
+      "grade": 7.0,
+      "condition": 3.0,
+      "view": 0.0,
+      "waterfront": 0.0,
+      "property_age": 58.0
+    },
+    "1": {
+      "sqft_living": 2530.0,
+      "sqft_lot": 7488.5,
+      "bedrooms": 4.0,
+      "bathrooms": 2.5,
+      "floors": 2.0,
+      "grade": 8.0,
+      "condition": 3.0,
+      "view": 0.0,
+      "waterfront": 0.0,
+      "property_age": 17.0
+    },
+    "2": {
+      "sqft_living": 2850.0,
+      "sqft_lot": 17342.0,
+      "bedrooms": 3.0,
+      "bathrooms": 2.5,
+      "floors": 2.0,
+      "grade": 9.0,
+      "condition": 3.0,
+      "view": 4.0,
+      "waterfront": 1.0,
+      "property_age": 54.0
+    }
+  }
+}

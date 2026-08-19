@@ -1,0 +1,256 @@
+{
+  "distribution_comparison": [
+    {
+      "column": "price_log",
+      "split": "test",
+      "n": 2644,
+      "min": 11.289794413577894,
+      "p25": 12.611541086966115,
+      "median": 12.912138488817774,
+      "p75": 13.279368835614243,
+      "max": 15.319588176962746,
+      "mean": 12.974715762702651
+    },
+    {
+      "column": "price_log",
+      "split": "train",
+      "n": 15100,
+      "min": 11.264476926102367,
+      "p25": 12.675455624538944,
+      "median": 13.038983942375959,
+      "p75": 13.413727609849227,
+      "max": 15.856731016694035,
+      "mean": 13.063256942598125
+    },
+    {
+      "column": "sqft_living",
+      "split": "test",
+      "n": 2644,
+      "min": 384.0,
+      "p25": 1440.0,
+      "median": 1960.0,
+      "p75": 2592.5,
+      "max": 8020.0,
+      "mean": 2113.9232223903177
+    },
+    {
+      "column": "sqft_living",
+      "split": "train",
+      "n": 15100,
+      "min": 290.0,
+      "p25": 1440.0,
+      "median": 1940.0,
+      "p75": 2590.0,
+      "max": 13540.0,
+      "mean": 2112.3633112582784
+    },
+    {
+      "column": "grade",
+      "split": "test",
+      "n": 2644,
+      "min": 4.0,
+      "p25": 7.0,
+      "median": 7.0,
+      "p75": 8.0,
+      "max": 13.0,
+      "mean": 7.613464447806354
+    },
+    {
+      "column": "grade",
+      "split": "train",
+      "n": 15100,
+      "min": 1.0,
+      "p25": 7.0,
+      "median": 7.0,
+      "p75": 8.0,
+      "max": 13.0,
+      "mean": 7.703841059602649
+    },
+    {
+      "column": "lat",
+      "split": "test",
+      "n": 2644,
+      "min": 47.3312,
+      "p25": 47.4683,
+      "median": 47.5503,
+      "p75": 47.736925,
+      "max": 47.7772,
+      "mean": 47.573077534039335
+    },
+    {
+      "column": "lat",
+      "split": "train",
+      "n": 15100,
+      "min": 47.2485,
+      "p25": 47.453975,
+      "median": 47.5664,
+      "p75": 47.6579,
+      "max": 47.7776,
+      "mean": 47.54926782119205
+    },
+    {
+      "column": "long",
+      "split": "test",
+      "n": 2644,
+      "min": -122.519,
+      "p25": -122.284,
+      "median": -122.201,
+      "p75": -122.173,
+      "max": -121.315,
+      "mean": -122.21473146747354
+    },
+    {
+      "column": "long",
+      "split": "train",
+      "n": 15100,
+      "min": -122.416,
+      "p25": -122.337,
+      "median": -122.222,
+      "p75": -122.087,
+      "max": -121.417,
+      "mean": -122.20383251655628
+    },
+    {
+      "column": "waterfront",
+      "split": "test",
+      "n": 2644,
+      "min": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0,
+      "max": 1.0,
+      "mean": 0.014372163388804841
+    },
+    {
+      "column": "waterfront",
+      "split": "train",
+      "n": 15100,
+      "min": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0,
+      "max": 1.0,
+      "mean": 0.007483443708609271
+    },
+    {
+      "column": "view",
+      "split": "test",
+      "n": 2644,
+      "min": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0,
+      "max": 4.0,
+      "mean": 0.2897125567322239
+    },
+    {
+      "column": "view",
+      "split": "train",
+      "n": 15100,
+      "min": 0.0,
+      "p25": 0.0,
+      "median": 0.0,
+      "p75": 0.0,
+      "max": 4.0,
+      "mean": 0.23483443708609272
+    }
+  ],
+  "geo_distance_test_zips": [
+    {
+      "zipcode": 98014,
+      "lat": 47.67148790322581,
+      "long": -121.84853225806452,
+      "nearest_train_zipcode": 98019,
+      "distance_to_nearest_train_zip": 0.12491573302858705
+    },
+    {
+      "zipcode": 98070,
+      "lat": 47.41742288135593,
+      "long": -122.4638220338983,
+      "nearest_train_zipcode": 98166,
+      "distance_to_nearest_train_zip": 0.11964338801760417
+    },
+    {
+      "zipcode": 98028,
+      "lat": 47.755137809187275,
+      "long": -122.24602826855123,
+      "nearest_train_zipcode": 98125,
+      "distance_to_nearest_train_zip": 0.06705196522538975
+    },
+    {
+      "zipcode": 98056,
+      "lat": 47.509657142857144,
+      "long": -122.18277832512315,
+      "nearest_train_zipcode": 98178,
+      "distance_to_nearest_train_zip": 0.06505063709695266
+    },
+    {
+      "zipcode": 98055,
+      "lat": 47.45866604477612,
+      "long": -122.20276119402985,
+      "nearest_train_zipcode": 98031,
+      "distance_to_nearest_train_zip": 0.05652467532860814
+    },
+    {
+      "zipcode": 98006,
+      "lat": 47.55802168674698,
+      "long": -122.14683935742973,
+      "nearest_train_zipcode": 98007,
+      "distance_to_nearest_train_zip": 0.05271576416779261
+    },
+    {
+      "zipcode": 98188,
+      "lat": 47.44730955882353,
+      "long": -122.28099264705882,
+      "nearest_train_zipcode": 98148,
+      "distance_to_nearest_train_zip": 0.04932136077041837
+    },
+    {
+      "zipcode": 98155,
+      "lat": 47.754863228699556,
+      "long": -122.3035403587444,
+      "nearest_train_zipcode": 98125,
+      "distance_to_nearest_train_zip": 0.037892436791349585
+    },
+    {
+      "zipcode": 98030,
+      "lat": 47.3690265625,
+      "long": -122.19041796875,
+      "nearest_train_zipcode": 98031,
+      "distance_to_nearest_train_zip": 0.03477962601474934
+    },
+    {
+      "zipcode": 98109,
+      "lat": 47.635601834862385,
+      "long": -122.35009174311926,
+      "nearest_train_zipcode": 98119,
+      "distance_to_nearest_train_zip": 0.017400724787236452
+    }
+  ],
+  "n_low_volume_zips_in_train": 3,
+  "low_volume_zips_in_train": [
+    98024,
+    98039,
+    98148
+  ],
+  "scarcity_buckets_counts": {
+    "MEDIUM": 40,
+    "HIGH": 6,
+    "LOW": 3
+  },
+  "baseline_diagnostic_model": "XGBoost (ABLATION_MODEL_PARAMS), basic features, no augmentation",
+  "correlation_error_vs_geo_distance": {
+    "r": -0.02028696921332052,
+    "p": 0.2970563336881979
+  },
+  "correlation_error_vs_feature_space_distance": {
+    "r": 0.24065768085091194,
+    "p": 3.7951303582520725e-36
+  },
+  "decision_tree": {
+    "train_has_underrepresented_regions": true,
+    "error_correlates_with_scarcity_signals": true,
+    "augmentation_hypothesis": "STRONG"
+  },
+  "note": "val excluido desta analise (P1 - val tocado uma unica vez, na fase 13). Veredito orienta o criterio de aceite da fase 05, mas as 2 tecnicas de augmentation sao testadas de qualquer forma (requisito explicito do usuario)."
+}

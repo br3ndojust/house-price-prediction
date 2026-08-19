@@ -1,0 +1,153 @@
+{
+  "n_test": 2644,
+  "n_val": 3868,
+  "category_thresholds": {
+    "alta_min": 88.0,
+    "moderada_min": 55.0,
+    "baixa_min": 17.0
+  },
+  "ape_breakpoints_from_test": {
+    "p25": 0.1630521012512894,
+    "p50": 0.20856287078065658,
+    "p75": 0.23059534966063952
+  },
+  "calibration_on_test": {
+    "by_category": [
+      {
+        "confidence_category": "Alta confian\u00e7a",
+        "n": 222,
+        "median_ape": 0.09434357191783847,
+        "median_abs_error": 62482.78125000035
+      },
+      {
+        "confidence_category": "Confian\u00e7a moderada",
+        "n": 960,
+        "median_ape": 0.12786215393686495,
+        "median_abs_error": 40652.68750000028
+      },
+      {
+        "confidence_category": "Baixa confian\u00e7a",
+        "n": 887,
+        "median_ape": 0.16388566176470573,
+        "median_abs_error": 78477.51562500012
+      },
+      {
+        "confidence_category": "Muito baixa confian\u00e7a / revis\u00e3o",
+        "n": 575,
+        "median_ape": 0.2286886007611293,
+        "median_abs_error": 126800.625
+      }
+    ],
+    "matrix_2x2": [
+      {
+        "cell": "cobertura_alta__erro_baixo",
+        "confidence_level": "ALTA",
+        "n": 1100,
+        "median_ape": 0.12324883521878671,
+        "median_abs_error": 43038.093749999854,
+        "low_sample": false
+      },
+      {
+        "cell": "cobertura_alta__erro_alto",
+        "confidence_level": "MEDIA",
+        "n": 222,
+        "median_ape": 0.17394203605769304,
+        "median_abs_error": 61868.79687499977,
+        "low_sample": false
+      },
+      {
+        "cell": "cobertura_baixa__erro_baixo",
+        "confidence_level": "MEDIA",
+        "n": 417,
+        "median_ape": 0.14557596982758667,
+        "median_abs_error": 67253.75000000058,
+        "low_sample": false
+      },
+      {
+        "cell": "cobertura_baixa__erro_alto",
+        "confidence_level": "BAIXA",
+        "n": 905,
+        "median_ape": 0.21090912426614508,
+        "median_abs_error": 127078.49999999983,
+        "low_sample": false
+      }
+    ]
+  },
+  "verification_on_val": {
+    "by_category": [
+      {
+        "confidence_category": "Alta confian\u00e7a",
+        "n": 628,
+        "observed_median_ape": 0.12254520232607163,
+        "observed_mae": 67050.15624999983,
+        "promised_median_ape_max_from_test": 0.1630521012512894,
+        "promise_held": true
+      },
+      {
+        "confidence_category": "Confian\u00e7a moderada",
+        "n": 1540,
+        "observed_median_ape": 0.10299785051373408,
+        "observed_mae": 38439.874999999825,
+        "promised_median_ape_max_from_test": 0.20856287078065658,
+        "promise_held": true
+      },
+      {
+        "confidence_category": "Baixa confian\u00e7a",
+        "n": 1051,
+        "observed_median_ape": 0.1078219387755102,
+        "observed_mae": 49584.95312499988,
+        "promised_median_ape_max_from_test": 0.23059534966063952,
+        "promise_held": true
+      },
+      {
+        "confidence_category": "Muito baixa confian\u00e7a / revis\u00e3o",
+        "n": 649,
+        "observed_median_ape": 0.13235646929824585,
+        "observed_mae": 60032.18749999977,
+        "promised_median_ape_max_from_test": NaN,
+        "promise_held": false
+      }
+    ],
+    "matrix_2x2": [
+      {
+        "cell": "cobertura_alta__erro_baixo",
+        "confidence_level": "ALTA",
+        "n": 2094,
+        "median_ape": 0.10122434725566795,
+        "median_abs_error": 41022.687499999796,
+        "low_sample": false
+      },
+      {
+        "cell": "cobertura_alta__erro_alto",
+        "confidence_level": "MEDIA",
+        "n": 257,
+        "median_ape": 0.1034626344086016,
+        "median_abs_error": 39641.15625000023,
+        "low_sample": false
+      },
+      {
+        "cell": "cobertura_baixa__erro_baixo",
+        "confidence_level": "MEDIA",
+        "n": 582,
+        "median_ape": 0.1355772680782118,
+        "median_abs_error": 62588.515624999796,
+        "low_sample": false
+      },
+      {
+        "cell": "cobertura_baixa__erro_alto",
+        "confidence_level": "BAIXA",
+        "n": 935,
+        "median_ape": 0.1330493620242211,
+        "median_abs_error": 67699.68750000058,
+        "low_sample": false
+      }
+    ],
+    "is_monotonic_by_category": false,
+    "monotonicity_note": "True = erro mediano observado em VAL cresce (ou empata) de 'Alta confianca' para 'Muito baixa confianca / revisao', na mesma ordem prometida pela calibracao em TEST. False = a ORDEM das categorias nao se sustentou em VAL, mesmo que cada categoria tenha ficado dentro do teto prometido (promise_held) - ver docs/09_confidence_matrix.md secao 'Limitacao observada' para a leitura honesta deste resultado."
+  },
+  "segment_lookup_summary": {
+    "n_level0_segments": 37,
+    "n_level1_segments": 22,
+    "n_level2_segments": 6
+  }
+}

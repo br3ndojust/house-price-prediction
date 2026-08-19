@@ -1,0 +1,6 @@
+# Parâmetros de features de comparáveis/vizinhança (KNN espacial, percentis locais)
+comparable:
+  k: 30
+  bed_tolerance: 1
+  bath_tolerance: 0.5
+  grade_tolerance: 1

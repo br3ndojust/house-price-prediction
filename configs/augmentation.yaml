@@ -1,0 +1,10 @@
+# Decisão vigente de augmentation (fase 05, revisada na fase 12 — ver AUDIT_LOG.md).
+#
+# A fase 05 adotou "technique_b" pelo critério de CV dentro de train (>=2% de melhora). A fase 12
+# mostrou que isso piorava a generalização real (MAE em test +8,8%) e reverteu para "none". Esse
+# valor é a fonte da verdade para `src/scripts/run_augmentation_experiment.py` — o script sempre roda a
+# COMPARAÇÃO completa (para fins de relatório/reavaliação futura), mas só materializa
+# `data/trusted/train_for_pipeline.parquet` com a variante aqui declarada, nunca com o "vencedor"
+# mecânico do critério de CV. Mudar este valor é uma decisão humana explícita (P4/P6), não um
+# efeito colateral de rodar `make build`.
+adopted: none  # none | technique_a_smogn | technique_b_controlled_perturbation

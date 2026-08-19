@@ -1,0 +1,88 @@
+contract_version: 1.0.0
+generated_at: '2026-08-17'
+status: RECOMMENDED_FOR_PROMOTION
+promotion_rule: Recomendacao gerada pelo pipeline (make evaluate). A substituicao
+  de producao exige aprovacao humana explicita - o pipeline nunca promove sozinho
+  (P6).
+model:
+  algorithm: xgboost
+  hyperparameters:
+    n_estimators: 400
+    max_depth: 3
+    learning_rate: 0.05
+  artifact: artifacts/model_final.pkl
+  trained_on: train+test combinados (refit final, fase 13)
+  cv_mae_dollar: 76672.76696602917
+  cv_r2_log: 0.8879619923669962
+  val_mae_dollar: 72516.91438566442
+  val_mape: 0.14127549692035327
+  val_note: val tocado uma unica vez, apos tudo (augmentation, features, modelo, hipoteses)
+    estar travado - fase 13.
+feature_schema:
+  model_features:
+  - bedrooms
+  - bathrooms
+  - sqft_living
+  - sqft_lot
+  - floors
+  - waterfront
+  - view
+  - condition
+  - grade
+  - sqft_above
+  - sqft_basement
+  - sqft_living15
+  - sqft_lot15
+  - medn_hshld_incm_amt
+  - hous_val_amt
+  - per_bchlr
+  - property_age
+  - dist_to_seattle_center
+  - comps_knn_price
+  - local_grade_percentile
+  target: price_log
+  n_features: 20
+  feature_registry: data/processing/feature_registry.csv
+preprocessing:
+  spatial_index:
+    artifact: artifacts/spatial_index.pkl
+    k_neighbors: 30
+    fit_on: train split only (P1)
+  demographics_merge: data/raw/zipcode_demographics.csv (1:1 por zipcode)
+dataset_version:
+  raw_files:
+  - kc_house_data.csv
+  - zipcode_demographics.csv
+  processed_artifact: data/processed/house_clean.parquet
+  trusted_artifact: data/trusted/features_contextual.parquet
+split_version:
+  method: GroupShuffleSplit duplo por zipcode
+  config:
+    split:
+      train: 0.7
+      test: 0.15
+      val: 0.15
+    group_column: zipcode
+    random_state: 42
+  metadata: data/processed/split_metadata.json
+validation_contract:
+  data_contract: configs/data_contract.yaml
+  error_matrix_test: reports/error_matrix.json
+  val_final_check: reports/val_final_check.json
+known_limitations:
+- Erro 2-4x maior em segmentos Luxury/waterfront/grade>=10 comparado ao mercado de
+  massa (reports/error_matrix.json, reports/val_final_check.json) - qualquer promocao
+  real precisa de SLA de erro diferenciado por segmento, nao um unico SLA global (ver
+  docs/07_deploy_strategy.md).
+- Composicao de zipcodes de TEST/VAL tem variancia alta (10/11 zipcodes cada, de 70
+  totais) - metrica agregada sensivel a qual zipcode especifico cai em cada particao
+  (fase 11).
+- 'Data augmentation (fase 05) melhorou CV dentro de train mas piorou generalizacao
+  geografica real - decisao revertida na fase 12. Licao: metrica de proxy (CV em train)
+  nem sempre reflete a metrica de interesse real (generalizacao); qualquer decisao
+  futura de augmentation precisa ser validada contra zipcode nao visto, nao so CV.'
+- Sem recalibracao por early stopping em train+test alem do refit simples da fase
+  13 (simplificacao consciente do escopo enxuto desta execucao).
+dependencies:
+  python: '>=3.11'
+  requirements_file: requirements.txt
