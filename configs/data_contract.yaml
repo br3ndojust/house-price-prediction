@@ -1,0 +1,25 @@
+# Contrato de schema dos 3 CSVs de entrada (fase 00). Nada hardcoded no script de validação (P5).
+kc_house_data:
+  path: data/raw/kc_house_data.csv
+  expected_columns:
+    [id, date, price, bedrooms, bathrooms, sqft_living, sqft_lot, floors, waterfront, view,
+     condition, grade, sqft_above, sqft_basement, yr_built, yr_renovated, zipcode, lat, long,
+     sqft_living15, sqft_lot15]
+  key_column: [id, date]  # id sozinho repete em revendas (mesma casa, data de venda diferente) — grão real é (id, date)
+  target_column: price
+  group_column: zipcode
+  non_negative_columns: [price, sqft_living, sqft_lot, bedrooms, bathrooms, sqft_above, sqft_basement]
+  range_checks:
+    bathrooms: [0, 10]
+    floors: [0, 5]
+    grade: [1, 13]
+    condition: [1, 5]
+
+zipcode_demographics:
+  path: data/raw/zipcode_demographics.csv
+  key_column: zipcode
+  min_rows: 60
+
+future_unseen_examples:
+  path: data/raw/future_unseen_examples.csv
+  forbidden_columns: [price, id, date]

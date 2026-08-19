@@ -1,0 +1,223 @@
+{
+  "hypothesis": "Remover comps_knn_price (feature dominante, 40.5% do gain) melhora o modelo.",
+  "pre_registered_criterion": {
+    "train_groupkfold3": "MAE do candidato n\u00e3o pode piorar em rela\u00e7\u00e3o ao baseline",
+    "test_holdout": "MAE do candidato precisa cair >= 5% (m\u00e9trica decisiva)",
+    "by_price_band": "nenhuma banda pode piorar > 10% (P3 \u2014 nunca s\u00f3 o n\u00famero global)"
+  },
+  "model": {
+    "algorithm": "xgboost",
+    "params": {
+      "n_estimators": 400,
+      "max_depth": 3,
+      "learning_rate": 0.05
+    }
+  },
+  "feature_counts": {
+    "baseline": 20,
+    "candidato": 19
+  },
+  "train_groupkfold3": {
+    "baseline_mae_mean": 76672.76696602917,
+    "candidato_mae_mean": 103111.12114682944,
+    "change_pct": 0.34482066093315905,
+    "train_did_not_worsen": false,
+    "cv_results_full": {
+      "baseline_20_features": {
+        "model": "xgboost",
+        "params": {
+          "n_estimators": 400,
+          "max_depth": 3,
+          "learning_rate": 0.05
+        },
+        "mae_mean": 76672.76696602917,
+        "mae_std": 6722.563890140499,
+        "rmse_mean": 144042.49069881332,
+        "rmse_std": 9541.837047726525,
+        "mape_mean": 13.660401021881098,
+        "mape_std": 0.5408426029373082,
+        "r2_log_mean": 0.8879619923669962,
+        "r2_log_std": 0.013075644492190442
+      },
+      "sem_comps_knn_price_19_features": {
+        "model": "xgboost",
+        "params": {
+          "n_estimators": 400,
+          "max_depth": 3,
+          "learning_rate": 0.05
+        },
+        "mae_mean": 103111.12114682944,
+        "mae_std": 18668.512594170905,
+        "rmse_mean": 173049.44493789467,
+        "rmse_std": 31203.28056459894,
+        "mape_mean": 18.43557695857564,
+        "mape_std": 1.8996372140011013,
+        "r2_log_mean": 0.8097134347326721,
+        "r2_log_std": 0.03916952131689645
+      }
+    }
+  },
+  "test_holdout": {
+    "baseline_mae": 102875.7539003404,
+    "candidato_mae": 98687.56561731751,
+    "change_pct": -0.04071113089562523,
+    "test_improved_5pct": false,
+    "by_price_band": {
+      "Luxury": {
+        "mae_baseline": 208942.32157676356,
+        "mae_candidato": 189367.14970176353,
+        "change_pct": -0.0936869645521206
+      },
+      "Premium": {
+        "mae_baseline": 117895.89320175438,
+        "mae_candidato": 81656.26096491226,
+        "change_pct": -0.30738672274890444
+      },
+      "Standard": {
+        "mae_baseline": 74146.65461327648,
+        "mae_candidato": 79088.46867387333,
+        "change_pct": 0.0666491844624907
+      },
+      "Entry": {
+        "mae_baseline": 56054.775291828795,
+        "mae_candidato": 75459.47575186446,
+        "change_pct": 0.3461739050600445
+      }
+    },
+    "any_band_worsened_a_lot": true,
+    "full_results": {
+      "baseline_20_features": {
+        "global": {
+          "n": 2644,
+          "mae": 102875.7539003404,
+          "rmse": 166777.3473542429,
+          "median_ae": 62605.37499999962,
+          "mape": 0.2107099401592192,
+          "median_ape": 0.155202774300442,
+          "p90_ae": 233451.51875000034,
+          "bias": -25905.596651616863,
+          "low_sample": false
+        },
+        "by_price_band": [
+          {
+            "price_band": "Luxury",
+            "n": 482,
+            "mae": 208942.32157676356,
+            "rmse": 312969.75424932496,
+            "median_ae": 141280.12499999965,
+            "mape": 0.1923728493530082,
+            "median_ape": 0.1564724631726575,
+            "p90_ae": 454153.36874999956,
+            "bias": 47080.6698651453,
+            "low_sample": false
+          },
+          {
+            "price_band": "Premium",
+            "n": 570,
+            "mae": 117895.89320175438,
+            "rmse": 154500.81049146008,
+            "median_ae": 92788.40625000017,
+            "mape": 0.21520623207888673,
+            "median_ape": 0.1633036565805817,
+            "p90_ae": 256188.4687500002,
+            "bias": -68991.31864035087,
+            "low_sample": false
+          },
+          {
+            "price_band": "Standard",
+            "n": 821,
+            "mae": 74146.65461327648,
+            "rmse": 96952.25777738949,
+            "median_ae": 58030.15624999994,
+            "mape": 0.19258844832581015,
+            "median_ape": 0.15366340579710072,
+            "p90_ae": 160039.31249999965,
+            "bias": -29424.97396467724,
+            "low_sample": false
+          },
+          {
+            "price_band": "Entry",
+            "n": 771,
+            "mae": 56054.775291828795,
+            "rmse": 80584.11154191362,
+            "median_ae": 38781.421874999796,
+            "mape": 0.23814617384224393,
+            "median_ape": 0.14944656249999935,
+            "p90_ae": 127163.32031250006,
+            "bias": -35932.97687662127,
+            "low_sample": false
+          }
+        ]
+      },
+      "sem_comps_knn_price_19_features": {
+        "global": {
+          "n": 2644,
+          "mae": 98687.56561731751,
+          "rmse": 158809.49033153197,
+          "median_ae": 65287.31249999997,
+          "mape": 0.2199817932822105,
+          "median_ape": 0.15075279787561516,
+          "p90_ae": 210227.4562499999,
+          "bias": -1637.2695401144038,
+          "low_sample": false
+        },
+        "by_price_band": [
+          {
+            "price_band": "Luxury",
+            "n": 482,
+            "mae": 189367.14970176353,
+            "rmse": 298680.2796674535,
+            "median_ae": 126725.96875000029,
+            "mape": 0.16604981953094314,
+            "median_ape": 0.14391933765544457,
+            "p90_ae": 402867.5000000004,
+            "bias": 120465.39581172205,
+            "low_sample": false
+          },
+          {
+            "price_band": "Premium",
+            "n": 570,
+            "mae": 81656.26096491226,
+            "rmse": 107521.74501941122,
+            "median_ae": 64076.140624999796,
+            "mape": 0.14956512111975193,
+            "median_ape": 0.12107169946426943,
+            "p90_ae": 175258.71249999988,
+            "bias": -9793.3701754386,
+            "low_sample": false
+          },
+          {
+            "price_band": "Standard",
+            "n": 821,
+            "mae": 79088.46867387333,
+            "rmse": 104179.21080319883,
+            "median_ae": 61672.31249999988,
+            "mape": 0.2091369878568572,
+            "median_ape": 0.15851510267430707,
+            "p90_ae": 178343.87500000012,
+            "bias": -21297.041374847766,
+            "low_sample": false
+          },
+          {
+            "price_band": "Entry",
+            "n": 771,
+            "mae": 75459.47575186446,
+            "rmse": 103024.37684822656,
+            "median_ae": 48944.09375,
+            "mape": 0.3173051392419087,
+            "median_ape": 0.1859906914893617,
+            "p90_ae": 188751.0624999998,
+            "bias": -51006.70489826524,
+            "low_sample": false
+          }
+        ]
+      }
+    }
+  },
+  "decision": "REJECT_KEEP_COMPS_KNN_PRICE",
+  "rejection_reasons": [
+    "TRAIN GroupKFold(3) MAE piorou +34.48% (crit\u00e9rio: n\u00e3o pode piorar)",
+    "TEST MAE mudou -4.07%, n\u00e3o atingiu a queda decisiva de -5% (near miss \u2014 quase bateu o crit\u00e9rio, mesmo padr\u00e3o da fase 12 iter.1)",
+    "banda(s) pioraram >10%: {'Entry': 0.3461739050600445}"
+  ]
+}

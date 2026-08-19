@@ -1,0 +1,105 @@
+{
+  "split_used": "val",
+  "note": "Tocado uma unica vez nesta execucao completa - depois de augmentation (fase 05, revertida na fase 12), features (fase 07-09), modelo (fase 10) e hipoteses (fase 12) estarem todos travados. Nao usado para nenhuma decisao anterior (P1).",
+  "trained_on": "train+test combinados (refit final)",
+  "n_train_test": 17744,
+  "global": {
+    "n": 3868,
+    "mae": 72516.91438566442,
+    "rmse": 112596.18292855703,
+    "median_ae": 48915.71874999994,
+    "mape": 0.14127549692035327,
+    "median_ape": 0.11151923383424361,
+    "p90_ae": 151603.25312499987,
+    "bias": 19535.530724857814,
+    "low_sample": false
+  },
+  "by_price_band": [
+    {
+      "price_band": "Luxury",
+      "n": 660,
+      "mae": 165303.17315340912,
+      "rmse": 224455.30839133984,
+      "median_ae": 128149.59374999959,
+      "mape": 0.17060766208647327,
+      "median_ape": 0.1508921061296859,
+      "p90_ae": 356085.55312499986,
+      "bias": 117481.94019886368,
+      "low_sample": false
+    },
+    {
+      "price_band": "Premium",
+      "n": 1184,
+      "mae": 64487.999260979755,
+      "rmse": 81889.0304144128,
+      "median_ae": 53635.15624999977,
+      "mape": 0.11777885064008671,
+      "median_ape": 0.0990267920696496,
+      "p90_ae": 126710.34062499978,
+      "bias": 26181.203388935814,
+      "low_sample": false
+    },
+    {
+      "price_band": "Standard",
+      "n": 1311,
+      "mae": 47582.35153270405,
+      "rmse": 62362.58865387484,
+      "median_ae": 38629.65625,
+      "mape": 0.12114144389497429,
+      "median_ape": 0.09776967930029136,
+      "p90_ae": 96159.18749999971,
+      "bias": -6903.158097349352,
+      "low_sample": false
+    },
+    {
+      "price_band": "Entry",
+      "n": 713,
+      "mae": 45807.96154014727,
+      "rmse": 62092.01435245167,
+      "median_ae": 35718.15624999988,
+      "mape": 0.19016265498833113,
+      "median_ape": 0.13549171960072595,
+      "p90_ae": 97511.3406250001,
+      "bias": -33552.80818285414,
+      "low_sample": false
+    }
+  ],
+  "by_property_cluster": [
+    {
+      "property_cluster": 2,
+      "n": 12,
+      "mae": 342483.1692708333,
+      "rmse": 440289.879964926,
+      "median_ae": 325197.06250000116,
+      "mape": 0.18775936827644832,
+      "median_ape": 0.17015451356589129,
+      "p90_ae": 481424.5749999992,
+      "bias": 81906.98177083326,
+      "low_sample": true
+    },
+    {
+      "property_cluster": 1,
+      "n": 1494,
+      "mae": 89463.03550660977,
+      "rmse": 141033.2152829221,
+      "median_ae": 57768.39062500003,
+      "mape": 0.13772657312549447,
+      "median_ape": 0.11318721862234621,
+      "p90_ae": 197033.9625000003,
+      "bias": 38420.801508115816,
+      "low_sample": false
+    },
+    {
+      "property_cluster": 0,
+      "n": 2362,
+      "mae": 60426.69422761432,
+      "rmse": 84825.98398077127,
+      "median_ae": 44745.195312499985,
+      "mape": 0.14328408527481806,
+      "median_ape": 0.1093438763992236,
+      "p90_ae": 129781.42187500012,
+      "bias": 7273.442679667658,
+      "low_sample": false
+    }
+  ]
+}

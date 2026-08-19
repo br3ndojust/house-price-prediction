@@ -1,0 +1,10 @@
+{
+  "n_predictions": 100,
+  "as_of_date": "2026-08-16",
+  "predicted_price_summary": {
+    "min": 178102.03125,
+    "median": 424576.25,
+    "mean": 487993.53125,
+    "max": 2451033.75
+  }
+}

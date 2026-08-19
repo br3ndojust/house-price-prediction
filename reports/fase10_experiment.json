@@ -1,0 +1,36 @@
+{
+  "hypothesis": "k diferente do baseline (30) reduz erro em Luxury sem piorar erro global",
+  "acceptance_criteria": "Luxury MAE cai >=5% E MAE global nao piora mais que 1%",
+  "baseline_k30": {
+    "global_mae": 102875.7539003404,
+    "luxury_mae": 208942.32157676356
+  },
+  "comparison": {
+    "k=15": {
+      "global_mae": 111246.76763722107,
+      "luxury_mae": 209320.54447614108
+    },
+    "k=30": {
+      "global_mae": 102875.7539003404,
+      "luxury_mae": 208942.32157676356
+    },
+    "k=50": {
+      "global_mae": 99050.90760920953,
+      "luxury_mae": 196465.69540975106
+    }
+  },
+  "decision_per_k": {
+    "k=15": {
+      "luxury_improvement_pct": -0.001810178505356393,
+      "global_degradation_pct": 0.08137013260665862,
+      "meets_acceptance_criteria": false
+    },
+    "k=50": {
+      "luxury_improvement_pct": 0.05971325518381729,
+      "global_degradation_pct": -0.03717927836364759,
+      "meets_acceptance_criteria": true
+    }
+  },
+  "final_decision": "PROMOTE",
+  "stopping_rule_applied": "fase10 encerrada apos 1 iteracao (roadmap secao 10) - nao itera indefinidamente perseguindo o segmento de luxo"
+}

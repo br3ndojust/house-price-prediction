@@ -1,0 +1,16 @@
+# Grid de seleção de modelo — versão enxuta (Ridge + 1 modelo de árvore), GroupKFold por zipcode
+cv:
+  method: GroupKFold
+  n_splits: 3
+  group_column: zipcode
+  random_state: 42
+
+models:
+  ridge:
+    alpha: [0.1, 1.0, 10.0]
+  xgboost:
+    n_estimators: [200, 400]
+    max_depth: [3, 5]
+    learning_rate: [0.05, 0.1]
+
+target: price_log

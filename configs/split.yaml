@@ -1,0 +1,7 @@
+# Split canônico — GroupShuffleSplit duplo por zipcode (P1: val é sagrado, split geográfico obrigatório)
+split:
+  train: 0.70
+  test: 0.15
+  val: 0.15
+group_column: zipcode
+random_state: 42

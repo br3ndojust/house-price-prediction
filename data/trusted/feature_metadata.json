@@ -1,0 +1,25 @@
+{
+  "model_features": [
+    "bedrooms",
+    "bathrooms",
+    "sqft_living",
+    "sqft_lot",
+    "floors",
+    "waterfront",
+    "view",
+    "condition",
+    "grade",
+    "sqft_above",
+    "sqft_basement",
+    "sqft_living15",
+    "sqft_lot15",
+    "medn_hshld_incm_amt",
+    "hous_val_amt",
+    "per_bchlr",
+    "property_age",
+    "dist_to_seattle_center",
+    "comps_knn_price",
+    "local_grade_percentile"
+  ],
+  "target": "price_log"
+}
